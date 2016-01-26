@@ -1,0 +1,19 @@
+{
+  "name": "ng-todo",
+  "homepage": "https://github.com/ronaldchacon/ng-todo",
+  "authors": [
+    "Ronald Chacon <ronald.chacon87@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ]
+}
