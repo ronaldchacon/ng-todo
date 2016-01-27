@@ -19,6 +19,7 @@
   "dependencies": {
     "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
     "angular": "1.4.9",
-    "AngularDevise": "angular-devise#^1.1.0"
+    "AngularDevise": "angular-devise#^1.1.0",
+    "angular-route": "1.4.9"
   }
 }
