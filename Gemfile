@@ -16,6 +16,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers', br
 gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'angular-rails-templates'
 gem 'sprockets', '~> 2.0'
+gem 'angular_rails_csrf'
 
 
 group :development, :test do
