@@ -1,1 +1,1 @@
-var app = angular.module("todo", []);
+var app = angular.module("todo", ["ngRoute", "Devise", "templates"]);

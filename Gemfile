@@ -14,6 +14,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'responders', '~> 2.1', '>= 2.1.1'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'
 gem 'devise', '~> 3.5', '>= 3.5.5'
+gem 'angular-rails-templates'
 
 
 group :development, :test do

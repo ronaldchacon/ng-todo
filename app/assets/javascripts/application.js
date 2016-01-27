@@ -15,4 +15,7 @@
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require bootstrap-sass/assets/javascripts/bootstrap
 //= require angular/angular
+//= require AngularDevise/lib/devise
+//= require angular-rails-templates
+//= require_tree ./templates
 //= require_tree .
