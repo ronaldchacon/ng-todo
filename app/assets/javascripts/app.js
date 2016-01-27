@@ -3,8 +3,8 @@ var app = angular.module("todo", ["ngRoute", "Devise", "templates"]);
 app.config(["$routeProvider", function($routeProvider) {
   $routeProvider
     .when("/", {
-      controller: "TodoCtrl",
-      templateUrl: "todo/index.html"
+      controller: "TasksCtrl",
+      templateUrl: "tasks/index.html"
     })
     .when("/login", {
       controller: "AuthCtrl",
