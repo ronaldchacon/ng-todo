@@ -4,7 +4,10 @@ app.config(["$routeProvider", function($routeProvider) {
   $routeProvider
     .when("/", {
       controller: "TasksCtrl",
-      templateUrl: "tasks/index.html"
+      templateUrl: "tasks/index.html",
+      resolve: ['TasksService', function(TasksService) {
+        return TasksService.all();
+      }]
     })
     .when("/login", {
       controller: "AuthCtrl",
