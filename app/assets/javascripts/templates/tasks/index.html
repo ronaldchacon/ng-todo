@@ -1,5 +1,8 @@
 <div class="container">
+  <h1 class="h2">Todo</h1>
   <div ng-repeat="task in tasks">
-    {{task.name}}
+    {{task.name}} | {{task.due_date}} | {{task.is_completed}}
   </div>
+
+  <h1 class="h2">Completed</h1>
 </div>
