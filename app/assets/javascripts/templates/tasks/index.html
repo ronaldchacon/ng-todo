@@ -1,8 +1,10 @@
 <div class="container">
   <h1 class="h2">Todo</h1>
-  <div ng-repeat="task in tasks">
-    {{task.name}} | {{task.due_date}} | {{task.is_completed}} | <a ng-href="#/tasks/{{task.id}}">View Notes</a>
+  <div class="tasks" ng-repeat="task in tasks">
+    <h3>{{task.name}}</h3>
+    <h4>{{task.due_date}}</h4>
+    <input type="checkbox" name="is_completed" ng-model="task.is_completed">
+    <h4><a ng-href="#/tasks/{{task.id}}">View Notes</a></h4>
   </div>
-
   <h1 class="h2">Completed</h1>
 </div>

@@ -5,9 +5,12 @@ app.config(["$routeProvider", function($routeProvider) {
     .when("/", {
       controller: "TasksCtrl",
       templateUrl: "tasks/index.html",
-      resolve: ['TasksService', function(TasksService) {
-        return TasksService.all();
-      }]
+      resolve: {
+        tasks: ['TasksService', function(TasksService) {
+          return TasksService.all();
+        }],
+        task: function() {}
+      }
     })
     .when("/tasks/:id", {
       controller: "TasksCtrl",
