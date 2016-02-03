@@ -2,14 +2,14 @@ app.controller("AuthCtrl", ["$scope", "$location", "Auth", function($scope, $loc
   $scope.login = function() {
     Auth.login($scope.user)
     .then(function() {
-      $location.path("/");
+      $location.path("#/");
     });
   };
 
   $scope.register = function() {
     Auth.register($scope.user)
     .then(function() {
-      $location.path("/");
+      $location.path("#/");
     });
   };
 }]);

@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="h2">Todo</h1>
   <div ng-repeat="task in tasks">
-    {{task.name}} | {{task.due_date}} | {{task.is_completed}}
+    {{task.name}} | {{task.due_date}} | {{task.is_completed}} | <a ng-href="#/tasks/{{task.id}}">View Notes</a>
   </div>
 
   <h1 class="h2">Completed</h1>

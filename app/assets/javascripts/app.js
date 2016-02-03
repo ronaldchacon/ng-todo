@@ -9,6 +9,15 @@ app.config(["$routeProvider", function($routeProvider) {
         return TasksService.all();
       }]
     })
+    .when("/tasks/:id", {
+      controller: "TasksCtrl",
+      templateUrl: "tasks/show.html",
+      resolve: {
+        task: ["$route", "TasksService", function($route, TasksService) {
+          return TasksService.getTask($route.current.params.id);
+        }]
+      }
+    })
     .when("/login", {
       controller: "AuthCtrl",
       templateUrl: "auth/login.html",
