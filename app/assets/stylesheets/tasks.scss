@@ -1,5 +1,18 @@
-.tasks {
+.task {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
+  border-bottom: 1px solid #eee;
+  &__title {
+    flex: 4;
+  }
+  &__due-date {
+    flex: 1;
+  }
+  &__completed {
+    flex: 0.5;
+  }
+  &__view-note {
+    flex: 1;
+  }
 }
