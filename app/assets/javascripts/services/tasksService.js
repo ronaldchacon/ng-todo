@@ -12,6 +12,12 @@ app.factory("TasksService", ["$http", "$location", function($http, $location) {
       .then(function(response) {
         return response.data;
       });
+    },
+    completeTask: function(task) {
+      return $http.put("/tasks/" + task.id, task)
+      .then(function(response) {
+        return response.data
+      });
     }
   };
   return Task;

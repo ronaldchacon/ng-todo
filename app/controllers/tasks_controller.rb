@@ -15,8 +15,17 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = current_user.tasks.find(params[:id])
+    @task.update(task_params)
+    respond_with @task
   end
 
   def delete
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:name, :due_date, :notes, :is_completed)
   end
 end

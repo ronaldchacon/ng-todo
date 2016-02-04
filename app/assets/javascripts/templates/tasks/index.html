@@ -1,12 +1,17 @@
 <div class="container">
   <h1 class="h2">Todo</h1>
-  <div class="tasks" ng-repeat="task in tasks">
-    <div class="task">
+  <div class="task-categories">
+    <p class="task-categories__title">Name</p>
+    <p class="task-categories__due-date">Due</p>
+    <p class="task-categories__completed">completed?</p>
+    <p class="task-categories__view-note">More Info</p>
+  </div>
+  <div class="tasks" ng-repeat="task in tasks | orderBy:'+is_completed'">
+    <div class="task" ng-class="task.is_completed === true ? 'task--completed' : ''">
       <h3 class="task__title">{{task.name}}</h3>
       <h4 class="task__due-date">{{task.due_date}}</h4>
-      <input type="checkbox" name="is_completed" ng-model="task.is_completed" class="task__completed">
+      <input type="checkbox" name="task[is_completed]" ng-model="task.is_completed" ng-change="completeTask(task)" class="task__completed">
       <h4 class="task__view-note"><a ng-href="#/tasks/{{task.id}}">View Notes</a></h4>
     </div>
   </div>
-  <h1 class="h2">Completed</h1>
 </div>
