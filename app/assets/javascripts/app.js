@@ -1,4 +1,4 @@
-var app = angular.module("todo", ["ngRoute", "Devise", "templates"]);
+var app = angular.module("todo", ["ngRoute", "ngAnimate", "Devise", "templates"]);
 
 app.config(["$routeProvider", function($routeProvider) {
   $routeProvider

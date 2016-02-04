@@ -1,57 +1,62 @@
 .task {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  &--completed {
-    color: #ccc;
-    a {
-      color: #ccc;
+  &__panel {
+    flex: auto;
+    margin-bottom: 5px;
+    &.panel-default {
+      .task__panel__heading {
+        color: #ccc;
+      }
     }
-    &:after {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      height: 1px;
-      background-color: #ccc;
-      content: "";
-      width: 100%;
-      display: block;
+    &__heading {
+      @extend .panel-heading;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      .material-switch > input[type="checkbox"] {
+        display: none;
+      }
+      .material-switch > label {
+        cursor: pointer;
+        height: 0px;
+        position: relative;
+        width: 40px;
+        &:before {
+          background: rgb(0, 0, 0);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+          border-radius: 8px;
+          content: '';
+          height: 16px;
+          margin-top: -8px;
+          position:absolute;
+          opacity: 0.3;
+          transition: all 0.4s ease-in-out;
+          width: 40px;
+        }
+        &:after {
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          content: '';
+          height: 24px;
+          left: -4px;
+          margin-top: -8px;
+          position: absolute;
+          top: -4px;
+          transition: all 0.3s ease-in-out;
+          width: 24px;
+        }
+      }
+      .material-switch > input[type="checkbox"]:checked + label::before {
+        background: #ACDBAB;
+        opacity: 0.5;
+      }
+      .material-switch > input[type="checkbox"]:checked + label::after {
+        background: #58B957;
+        left: 20px;
+      }
     }
   }
-  &__title {
-    flex: 4;
-    margin: 0 auto;
-  }
-  &__due-date {
-    flex: 1;
-    margin: 0 auto;
-  }
-  &__completed {
-    flex: 0.5;
-  }
-  &__view-note {
-    flex: 1;
-  }
-}
 
-.task-categories {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  &__title {
-    flex: 4;
-    margin: 0 auto;
-  }
-  &__due-date {
-    flex: 1;
-    margin: 0 auto;
-  }
-  &__completed {
-    flex: 0.5;
-  }
-  &__view-note {
-    flex: 1;
-  }
 }
