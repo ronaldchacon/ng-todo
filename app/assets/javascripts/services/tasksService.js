@@ -31,6 +31,12 @@ app.factory("TasksService", ["$http", "$location", function($http, $location) {
       .then(function(response) {
         return Task.all();
       });
+    },
+    newTask: function(task) {
+      return $http.post("/tasks", task)
+      .then(function(response) {
+        Task.tasks.unshift(response.data);
+      });
     }
   };
   return Task;

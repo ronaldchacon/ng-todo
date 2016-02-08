@@ -12,6 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    respond_with Task.create(task_params.merge({ user: current_user }))
   end
 
   def update
