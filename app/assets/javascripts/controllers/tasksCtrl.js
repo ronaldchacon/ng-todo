@@ -19,8 +19,10 @@ app.controller("TasksCtrl", ["$scope", "$timeout", "TasksService", "task", funct
 
   $scope.deleteCompletedTasks = function(tasks) {
     TasksService.deleteCompletedTasks(tasks)
-    .then(function() {
-      TasksService.all();
+    .then(function(data) {
+      $scope.tasks = $scope.tasks.filter(function(task) {
+        return data.indexOf(task.id) === -1;
+      });
     });
   };
 }]);

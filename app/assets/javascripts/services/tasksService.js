@@ -29,7 +29,7 @@ app.factory("TasksService", ["$http", "$location", function($http, $location) {
       }, task_ids);
       return $http.put("/tasks/delete_all", {ids: task_ids})
       .then(function(response) {
-        return Task.all();
+        return task_ids;
       });
     },
     newTask: function(task) {
