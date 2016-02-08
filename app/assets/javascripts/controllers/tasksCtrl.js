@@ -1,14 +1,17 @@
-app.controller("TasksCtrl", ["$scope", "TasksService", "task", function($scope, TasksService, task) {
+app.controller("TasksCtrl", ["$scope", "$timeout", "TasksService", "task", function($scope, $timeout, TasksService, task) {
   $scope.tasks = TasksService.tasks;
   $scope.task = task;
 
+  $scope.filters = {};
+
   $scope.completeTask = function(task) {
-    TasksService.completeTask(task)
+    TasksService.completeTask(task);
+  };
+
+  $scope.deleteCompletedTasks = function(tasks) {
+    TasksService.deleteCompletedTasks(tasks)
     .then(function() {
-      return TasksService.all()
-      .then(function(response) {
-        angular.copy(response.data, $scope.tasks);
-      });
+      TasksService.all;
     });
   };
 }]);

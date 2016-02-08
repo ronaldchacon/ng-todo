@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = current_user.tasks.sort_by(&:updated_at)
+    @tasks = current_user.tasks.sort_by(&:due_date)
     respond_with @tasks
   end
 
@@ -21,6 +21,10 @@ class TasksController < ApplicationController
   end
 
   def delete
+  end
+
+  def delete_all
+    respond_with Task.where({ id: params[:ids] }).destroy_all
   end
 
   private

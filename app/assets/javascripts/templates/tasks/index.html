@@ -1,13 +1,29 @@
 <div class="container">
-  <h1 class="h2">Todo</h1>
-  <div class="task task-fade" ng-repeat="task in tasks | orderBy:'-is_completed':true">
-    <div class="task__panel" ng-class="task.is_completed === true ? 'panel-default' : 'panel-primary'">
-      <div class="task__panel__heading">
-        <h3>{{task.name}}</h3>
-        <div class="material-switch">
-          <input type="checkbox" name="task[is_completed]" id="task-{{task.id}}" ng-model="task.is_completed" ng-change="completeTask(task)">
-          <label for="task-{{task.id}}"></label>
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>My Todo List</h1>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="task" ng-repeat="task in tasks | filter:myFilter" ng-class="task.is_completed === true ? 'task--completed' : 'task--not-completed'">
+          <p style="flex:3 0 0">{{task.name}}</p>
+          <p style="flex:1 0 0">{{task.due_date}}</p>
+          <div class="material-switch" style="margin-left:auto">
+            <input type="checkbox" id="task-{{task.id}}" ng-model="task.is_completed" ng-change="completeTask(task)">
+            <label for="task-{{task.id}}"></label>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="tasks-footer">
+      <div class="task-filters" ng-init="isCompleted = 'all tasks'">
+        <span>Filter By: </span>
+        <a ng-class="{'active':isCompleted === 'not completed'}" ng-click="myFilter = {is_completed: false}; isCompleted = 'not completed'">Not Completed</a> |
+        <a ng-class="{'active':isCompleted === 'completed'}" ng-click="myFilter = {is_completed: true}; isCompleted = 'completed'">Completed</a> |
+        <a ng-class="{'active':isCompleted === 'all tasks'}" ng-click="myFilter = {}; isCompleted = 'all tasks'">All Tasks</a>
+      </div>
+      <div class="task-actions">
+        <a ng-click="deleteCompletedTasks(tasks)">Delete Completed Tasks</a>
       </div>
     </div>
   </div>
