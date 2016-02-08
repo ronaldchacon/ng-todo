@@ -1,8 +1,13 @@
-app.controller("TasksCtrl", ["$scope", "$timeout", "TasksService", "task", function($scope, $timeout, TasksService, task) {
+app.controller("TasksCtrl", ["$scope", "$timeout", "$filter", "TasksService", "task", function($scope, $timeout, $filter, TasksService, task) {
   $scope.tasks = TasksService.tasks;
   $scope.task = task;
 
   $scope.filters = {};
+
+  $scope.$watch('tasks', function() {
+    $scope.remainingCount = $filter('filter')($scope.tasks, {is_completed: false}).length;
+    $scope.completedCount = $scope.tasks.length - $scope.remainingCount;
+  }, true);
 
   $scope.newTask = function() {
     TasksService.newTask({
