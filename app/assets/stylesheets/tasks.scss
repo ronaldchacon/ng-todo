@@ -5,6 +5,9 @@
   &--completed {
     color: #ccc;
   }
+  &--title {
+    position: relative;
+  }
 }
 
 .task-filters {
@@ -45,4 +48,10 @@
       display:none;
     }
   }
+}
+
+.delete-task {
+  position: absolute;
+  right: 20%;
+  cursor: pointer;
 }

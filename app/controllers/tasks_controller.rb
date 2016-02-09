@@ -21,7 +21,8 @@ class TasksController < ApplicationController
     respond_with @task
   end
 
-  def delete
+  def destroy
+    respond_with Task.find(params[:id]).destroy
   end
 
   def delete_all

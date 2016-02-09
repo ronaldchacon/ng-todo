@@ -16,8 +16,10 @@
     </div>
     <div class="panel-body">
       <ul class="list-group">
-        <li class="task" ng-repeat="task in tasks | filter:myFilter" ng-class="task.is_completed === true ? 'task--completed' : 'task--not-completed'">
-          <p style="flex:3 0 0">{{task.name}}</p>
+        <li class="task" ng-repeat="task in tasks | filter:myFilter" ng-class="task.is_completed === true ? 'task--completed' : 'task--not-completed'" ng-mouseover="showDelete()" ng-mouseleave="hideDelete()">
+          <p class="task--title" style="flex:3 0 0">{{task.name}}
+            <span class="delete-task" ng-show="showDeleteOption" ng-click="deleteTask(task)">Delete</span>
+          </p>
           <p style="flex:1 0 0">{{task.due_date}}</p>
           <div class="material-switch" style="margin-left:auto">
             <input type="checkbox" id="task-{{task.id}}" ng-model="task.is_completed" ng-change="completeTask(task)">

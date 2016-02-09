@@ -37,6 +37,12 @@ app.factory("TasksService", ["$http", "$location", function($http, $location) {
       .then(function(response) {
         Task.tasks.push(response.data);
       });
+    },
+    deleteTask: function(task) {
+      return $http.delete("/tasks/" + task.id)
+      .then(function(response) {
+        return task;
+      });
     }
   };
   return Task;

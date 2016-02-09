@@ -30,4 +30,19 @@ app.controller("TasksCtrl", ["$scope", "$timeout", "$filter", "TasksService", "t
       });
     });
   };
+
+  $scope.deleteTask = function(task) {
+    TasksService.deleteTask(task)
+    .then(function(data) {
+      $scope.tasks.splice($scope.tasks.indexOf(data), 1);
+    });
+  };
+
+  $scope.showDelete = function() {
+    this.showDeleteOption = true;
+  };
+
+  $scope.hideDelete = function() {
+    this.showDeleteOption = false;
+  };
 }]);
