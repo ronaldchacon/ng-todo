@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
       controller: "TasksCtrl",
       templateUrl: "tasks/show.html",
       resolve: {
-        task: ["$route", "TasksService", function($route, TasksService) {
+        viewTask: ["$route", "TasksService", function($route, TasksService) {
           return TasksService.getTask($route.current.params.id);
         }]
       }

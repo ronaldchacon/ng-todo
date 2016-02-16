@@ -1,8 +1,8 @@
-app.controller("TasksCtrl", function($scope, $timeout, $filter, TasksService, task) {
+app.controller("TasksCtrl", function($scope, $timeout, $filter, TasksService, viewTask) {
   'use strict';
 
   $scope.tasks = TasksService.tasks;
-  $scope.task = task;
+  $scope.task = viewTask;
 
   $scope.filters = {};
 
