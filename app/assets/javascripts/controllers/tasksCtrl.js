@@ -1,4 +1,6 @@
 app.controller("TasksCtrl", ["$scope", "$timeout", "$filter", "TasksService", "task", function($scope, $timeout, $filter, TasksService, task) {
+  'use strict';
+  
   $scope.tasks = TasksService.tasks;
   $scope.task = task;
 

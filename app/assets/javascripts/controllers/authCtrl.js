@@ -1,4 +1,6 @@
 app.controller("AuthCtrl", ["$scope", "$location", "Auth", function($scope, $location, Auth) {
+  'use strict';
+  
   $scope.login = function() {
     Auth.login($scope.user)
     .then(function() {

@@ -1,6 +1,8 @@
 var app = angular.module("todo", ["ngRoute", "ngAnimate", "Devise", "templates"]);
 
 app.config(["$routeProvider", function($routeProvider) {
+  'use strict';
+  
   $routeProvider
     .when("/", {
       controller: "TasksCtrl",

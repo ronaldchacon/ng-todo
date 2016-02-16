@@ -1,4 +1,5 @@
 app.filter('completedTasks', function() {
+  'use strict';
   return function(input) {
     var completedTasks = [];
     angular.forEach(input, function(task) {

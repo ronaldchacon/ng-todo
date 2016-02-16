@@ -1,4 +1,6 @@
 app.controller("NavCtrl", ["$scope", "Auth", function($scope, Auth) {
+  'use strict';
+  
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 

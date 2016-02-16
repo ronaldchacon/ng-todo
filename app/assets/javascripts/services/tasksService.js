@@ -1,4 +1,6 @@
 app.factory("TasksService", ["$http", "$location", function($http, $location) {
+  'use strict';
+  
   var Task = {
     tasks: [],
     all: function() {
