@@ -1,6 +1,6 @@
-app.controller("TasksCtrl", ["$scope", "$timeout", "$filter", "TasksService", "task", function($scope, $timeout, $filter, TasksService, task) {
+app.controller("TasksCtrl", function($scope, $timeout, $filter, TasksService, task) {
   'use strict';
-  
+
   $scope.tasks = TasksService.tasks;
   $scope.task = task;
 
@@ -47,4 +47,4 @@ app.controller("TasksCtrl", ["$scope", "$timeout", "$filter", "TasksService", "t
   $scope.hideDelete = function() {
     this.showDeleteOption = false;
   };
-}]);
+});

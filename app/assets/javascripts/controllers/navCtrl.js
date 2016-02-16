@@ -1,6 +1,6 @@
-app.controller("NavCtrl", ["$scope", "Auth", function($scope, Auth) {
+app.controller("NavCtrl", function($scope, Auth) {
   'use strict';
-  
+
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 
@@ -19,4 +19,4 @@ app.controller("NavCtrl", ["$scope", "Auth", function($scope, Auth) {
   $scope.$on('devise:logout', function (e, user){
     $scope.user = {};
   });
-}]);
+});
