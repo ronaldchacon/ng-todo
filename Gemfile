@@ -17,6 +17,7 @@ gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'angular-rails-templates'
 gem 'sprockets', '~> 2.0'
 gem 'angular_rails_csrf'
+gem 'ngannotate-rails', '~> 1.2', '>= 1.2.1'
 
 
 group :development, :test do
